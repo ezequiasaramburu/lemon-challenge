@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "58895251934",
+    "project_id": "lemon-challenge-3eb45",
+    "storage_bucket": "lemon-challenge-3eb45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58895251934:android:22dc83448ac4c2eccb454f",
+        "android_client_info": {
+          "package_name": "com.lemonchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58895251934-pckm6haasv9lqk4uh6mffkbei8jevnog.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lemonchallenge",
+            "certificate_hash": "e9776d0fa9af13963be4dce97d9fd2197bf3843f"
+          }
+        },
+        {
+          "client_id": "58895251934-uph97tm68h4ajo7nsg6a6km1vuk1tore.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9wAswwT0nBn3pp06Sqn1bjLe2GLxqA5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58895251934-uph97tm68h4ajo7nsg6a6km1vuk1tore.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		AEF55D83E3CE7500979863C6 /* libPods-lemonChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1381EC7EC79DB0A979591019 /* libPods-lemonChallenge.a */; };
+		FE7A9E5E27B88D7F00B9FD6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7A9E5D27B88D7F00B9FD6D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E7518E60AA5E2E9B65DDCF25 /* Pods-lemonChallenge-lemonChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lemonChallenge-lemonChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-lemonChallenge-lemonChallengeTests/Pods-lemonChallenge-lemonChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC87E82302F321F82936E5DE /* Pods-lemonChallenge-lemonChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lemonChallenge-lemonChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-lemonChallenge-lemonChallengeTests/Pods-lemonChallenge-lemonChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FE7A9E5D27B88D7F00B9FD6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "lemonChallenge/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		13B07FAE1A68108700A75B9A /* lemonChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				FE7A9E5D27B88D7F00B9FD6D /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -145,7 +148,6 @@
 				EC87E82302F321F82936E5DE /* Pods-lemonChallenge-lemonChallengeTests.debug.xcconfig */,
 				E7518E60AA5E2E9B65DDCF25 /* Pods-lemonChallenge-lemonChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,6 +247,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				FE7A9E5E27B88D7F00B9FD6D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
