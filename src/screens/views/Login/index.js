@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {SafeAreaView} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Image, SafeAreaView, Text, View } from 'react-native';
 import {
   GoogleSignin,
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
+import MapImage from '../../../../assets/images/map.png';
+import { styles } from './styles';
 
 const Login = () => {
   const [user, setUserInfo] = useState();
@@ -21,7 +23,6 @@ const Login = () => {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
       setUserInfo(userInfo);
-      console.log(userInfo);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log(error);
@@ -36,13 +37,23 @@ const Login = () => {
   };
 
   return (
-    <SafeAreaView>
-      <GoogleSigninButton
-        style={{width: 192, height: 48}}
-        size={GoogleSigninButton.Size.Wide}
-        color={GoogleSigninButton.Color.Dark}
-        onPress={signIn}
-      />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>COVID - 19</Text>
+      </View>
+      <Image source={MapImage} style={styles.map} resizeMode="contain" />
+      <View style={styles.subtitleContainer}>
+        <Text style={styles.subtitle}>Welcome to Covid Tracker App</Text>
+      </View>
+      <View style={styles.footerContainer}>
+        <Text style={styles.footerText}>Sign in to find the latest info</Text>
+        <GoogleSigninButton
+          style={styles.loginButton}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Dark}
+          onPress={signIn}
+        />
+      </View>
     </SafeAreaView>
   );
 };
