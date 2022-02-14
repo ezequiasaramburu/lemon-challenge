@@ -1,39 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Image, SafeAreaView, Text, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   GoogleSignin,
   GoogleSigninButton,
-  statusCodes,
 } from '@react-native-google-signin/google-signin';
 import MapImage from '../../../../assets/images/map.png';
+import { getUser } from '../../../state/auth/actions';
 import { styles } from './styles';
 
 const Login = () => {
-  const [user, setUserInfo] = useState();
+  const dispatch = useDispatch();
+  const isLoading = useSelector(state => state.auth.isLoading);
 
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
+        // Correct way to store this is on .ENV file
         '58895251934-uph97tm68h4ajo7nsg6a6km1vuk1tore.apps.googleusercontent.com',
     });
   }, []);
 
-  const signIn = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      setUserInfo(userInfo);
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log(error);
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log(error);
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log(error);
-      } else {
-        console.log('error', error.code);
-      }
-    }
+  const signIn = () => {
+    dispatch(getUser());
   };
 
   return (
@@ -52,6 +41,7 @@ const Login = () => {
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
           onPress={signIn}
+          disabled={isLoading}
         />
       </View>
     </SafeAreaView>

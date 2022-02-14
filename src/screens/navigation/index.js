@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useSelector } from 'react-redux';
 import Login from '../views/Login';
 import Home from '../views/Home';
 import { theme } from '../../constants/theme';
@@ -27,7 +28,9 @@ const StackNavigation = () => {
 };
 
 const MainNavigator = () => {
-  if (true) {
+  const user = useSelector(state => state.auth.user);
+
+  if (!user) {
     return <Login />;
   }
 

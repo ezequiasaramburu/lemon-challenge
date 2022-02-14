@@ -8,7 +8,7 @@ export function* workerCountriesRequest() {
     const { data } = yield call(client.get, '/countries');
     yield put(setCountries(data));
   } catch (error) {
-    console.log(error);
+    console.log('error', error);
   } finally {
     yield put(setCountriesLoading(false));
   }
