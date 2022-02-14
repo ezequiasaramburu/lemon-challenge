@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Login from '../views/Login';
 import Home from '../views/Home';
 import CountryDetail from '../views/CountryDetail';
 import { theme } from '../../constants/theme';
+import { getCurrentUser } from '../../state/auth/actions';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +35,12 @@ const StackNavigation = () => {
 };
 
 const MainNavigator = () => {
+  const dispatch = useDispatch();
   const user = useSelector(state => state.auth.user);
+
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
   if (!user) {
     return <Login />;
