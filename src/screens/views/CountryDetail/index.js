@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Item } from '../../../components/Item';
 import { Header } from '../../../components/Header';
 import { getCountryDetail } from '../../../state/countries/actions';
+import { useSort } from '../../../utils/sort';
 
 const CountryDetail = ({ route }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const CountryDetail = ({ route }) => {
   const { slug } = route?.params;
   const [orderBy, setOrderBy] = useState('Date');
   const [asce, setAsce] = useState(true);
+  const sortedData = useSort(details, orderBy, asce);
 
   useEffect(() => {
     dispatch(getCountryDetail(slug));
@@ -41,7 +43,7 @@ const CountryDetail = ({ route }) => {
             onPressAsce={handleOnAscending}
             onPressOrder={handleOnTypeOrder}
           />
-          <FlatList data={details} renderItem={RederItem} />
+          <FlatList data={sortedData} renderItem={RederItem} />
         </>
       )}
     </SafeAreaView>
