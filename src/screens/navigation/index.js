@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector } from 'react-redux';
 import Login from '../views/Login';
 import Home from '../views/Home';
+import CountryDetail from '../views/CountryDetail';
 import { theme } from '../../constants/theme';
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +23,11 @@ const StackNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={headerOptions}>
         <Stack.Screen name="Countries" component={Home} />
+        <Stack.Screen
+          name="Country detail"
+          component={CountryDetail}
+          options={({ route }) => ({ title: route.params.title })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,4 +1,9 @@
-import { setCountries, setCountriesLoading } from './actions';
+import {
+  setCountries,
+  setCountriesLoading,
+  setCountryDetail,
+  setCountryDetailLoading,
+} from './actions';
 
 const initialState = {
   data: null,
@@ -18,6 +23,19 @@ export const countriesReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.payload,
+      };
+    }
+    case String(setCountryDetail): {
+      return {
+        ...state,
+        details: action.payload,
+        detailsLoading: false,
+      };
+    }
+    case String(setCountryDetailLoading): {
+      return {
+        ...state,
+        detailsLoading: action.payload,
       };
     }
     default:
